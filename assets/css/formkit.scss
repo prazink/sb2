@@ -1,0 +1,95 @@
+// when input is filled or focused
+// reposition label to top of input
+.formkit-outer {
+  &[data-complete] {
+    .formkit-label {
+      @apply top-0 right-auto px-1 text-xs leading-normal text-success;
+    }
+
+    .formkit-inner {
+      @apply border-success;
+    }
+
+    .formkit-input {
+      @apply text-font-gray text-opacity-100;
+
+      &[data-has-label] {
+        @apply text-opacity-100;
+      }
+    }
+
+
+      [data-checked] {
+        .formkit-decorator {
+          @apply border-success;
+        }
+        .formkit-decorator-icon {
+          @apply flex;
+        }
+        //@apply outline-none w-4 h-4;
+        //background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22%23ffffff%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5.707%207.293a1%201%200%200%200-1.414%201.414l2%202a1%201%200%200%200%201.414%200l4-4a1%201%200%200%200-1.414-1.414L7%208.586%205.707%207.293z%22%20%2F%3E%3C%2Fsvg%3E')
+    }
+  }
+
+  &[data-invalid] {
+    .formkit-label,
+    .formkit-input {
+      @apply text-error;
+    }
+
+    &:hover .formkit-inner,
+    .formkit-inner {
+      @apply border-error;
+    }
+
+    .formkit-help {
+      @apply hidden;
+    }
+  }
+
+  &[data-disabled] {
+    .formkit-label {
+      @apply bg-transparent;
+    }
+
+    .formkit-label,
+    .formkit-help,
+    .formkit-icon,
+    input {
+      @apply text-inactive;
+    }
+
+    .formkit-inner {
+      @apply border-inactive;
+      &:hover, &:focus {
+        @apply border-inactive;
+      }
+    }
+
+    &:hover .formkit-inner {
+      @apply border-inactive;
+    }
+  }
+
+  &[data-floating-label][data-prefix-icon] .formkit-label {
+    @apply left-12
+  }
+
+  select.formkit-input {
+    &[data-has-label] {
+      @apply text-opacity-0;
+    }
+    &:focus {
+      &[data-has-label] {
+        @apply text-opacity-100;
+      }
+      & ~ .formkit-label-floating {
+        @apply top-0 left-3 right-auto px-1 text-xs leading-normal text-deep-sapphire bg-white;
+      }
+    }
+
+    & ~ .formkit-label-floating[data-has-value="true"] {
+        @apply top-0 left-3 right-auto px-1 text-xs leading-normal bg-white text-success;
+    }
+  }
+}

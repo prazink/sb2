@@ -1,0 +1,70 @@
+@import './fonts.scss';
+/* @import './richtext.scss'; */
+@import './gradients.scss';
+@import './animations.scss';
+@import './formkit.scss';
+
+/* Tailwind Global CSS */
+@import './tailwind.css';
+
+@layer base {
+  /* @import "./fonts.scss"; */
+
+  html {
+    @apply font-sans #{!important};
+  }
+}
+
+@layer components {
+  @import './richtext.scss';
+
+  .car-loan-gradient {
+    @apply sm:from-banner-car sm:via-banner-car sm:bg-gradient-90;
+  }
+  .home-loan-gradient {
+    @apply sm:from-banner-home sm:via-banner-home sm:bg-gradient-90;
+  }
+  .business-loan-gradient {
+    @apply sm:from-banner-business sm:via-banner-business sm:bg-gradient-90;
+  }
+  .personal-loan-gradient {
+    @apply sm:from-banner-personal sm:via-banner-personal sm:bg-gradient-90;
+  }
+  .smsf-loan-gradient {
+    @apply sm:from-banner-smsf sm:via-banner-smsf sm:bg-gradient-90;
+  }
+  .commercial-loan-gradient {
+    @apply sm:from-banner-commercial sm:via-banner-commercial sm:bg-gradient-90;
+  }
+  .list-check {
+    ul {
+      @apply mt-6;
+      > li {
+        @apply leading-tighter relative mb-2 pl-8;
+        &:before {
+          @apply absolute left-0 inline-block w-5 h-5 leading-tighter md:top-0.5 bg-success;
+          content: "";
+          -webkit-mask-image: url("../icons/CircleCheck.svg");
+          mask-image: url("../icons/CircleCheck.svg");
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  sup {
+    vertical-align: super;
+    font-size: 0.625rem;
+    line-height: 1.6;
+  }
+  b,
+  strong {
+    font-weight: 900;
+  }
+}
+
+/* @layer utilities {
+  @import './gradients.scss';
+  @import './animations.scss';
+} */
+

@@ -1,0 +1,217 @@
+.richtext {
+  @apply text-font-tundora text-body;
+
+  > * {
+    &:first-child {
+      @apply mt-0 #{!important};;
+    }
+
+    &:last-child {
+      @apply mb-0 #{!important};;
+    }
+  }
+
+  .wysiwyg {
+    //@apply my-6;
+
+    // default margin between element
+    > * {
+      @apply my-6 print:my-3;
+
+      // remove margin-top for first-child
+      &:first-child {
+        @apply mt-0;
+      }
+
+      // remove margin-bottom for last-child
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+
+    // disable elements thare are not supported
+    //h1, h2, h5, h6 {
+    //  display: none;
+    //}
+
+    // apply specific styles for headings
+    > h2 {
+      @apply text-deep-sapphire text-h3-sm lg:text-h3 print:text-h5;
+
+      b {
+        @apply font-heavy
+      }
+    }
+
+    > h3 {
+      @apply text-deep-sapphire text-h4-sm lg:text-h4 print:text-h5;
+
+      b {
+        @apply font-heavy
+      }
+    }
+
+    > h4 {
+      @apply text-h5-sm lg:text-h5 print:text-h5;
+
+      + p {
+        @apply mt-3;
+      }
+
+      b {
+        @apply font-heavy
+      }
+    }
+
+    > h5 {
+      @apply text-h5-sm lg:text-h5 my-0 font-heavy;
+    }
+
+    > p {
+      @apply mb-6 print:text-xs;
+
+      + h4 {
+        @apply mt-12
+      }
+
+      + h5 {
+        @apply mt-10;
+      }
+    }
+
+    > ul,
+    > ol {
+      @apply my-6 print:text-xs print:my-3;
+    }
+
+    ol {
+      counter-reset: section;
+
+      &[type='A'] {
+        --list-counter-style: 'upper-alpha';
+      }
+      &[type='a'] {
+        --list-counter-style: 'lower-alpha';
+      }
+      &[type='A'] {
+        --list-counter-style: 'upper-alpha';
+      }
+      &[type='a'] {
+        --list-counter-style: 'lower-alpha';
+      }
+      &[type='I'] {
+        --list-counter-style: 'upper-roman';
+      }
+      &[type='i'] {
+        --list-counter-style: 'lower-roman';
+      }
+      &[type='I'] {
+        --list-counter-style: 'upper-roman';
+      }
+      &[type='i'] {
+        --list-counter-style: 'lower-roman';
+      }
+      &[type='1'] {
+        --list-counter-style: 'decimal';
+      }
+
+      > li {
+        @apply relative my-1 pl-6 text-left;
+
+        &:before {
+          @apply text-cerulean absolute left-0;
+          counter-increment: section;
+          content: counter(section, var(--list-counter-style, decimal)) '.';
+        }
+      }
+    }
+
+    ul {
+      @apply print:list-disc print:ml-4;
+      > li {
+        @apply relative my-1 pl-6 text-left print:pl-2 last:print:hidden;
+
+        &:before {
+          @apply content-blank absolute top-[13px] left-0 w-1.5 h-1.5 rounded-full bg-cerulean print:hidden;
+        }
+      }
+    }
+
+    > hr {
+      @apply my-12;
+    }
+
+    a:not([class]) {
+      @apply text-persian-blue underline hover:no-underline;
+    }
+
+    b {
+      @apply font-extrabold;
+    }
+
+    > blockquote {
+      @apply my-14;
+
+      h6 {
+        @apply font-heavy text-deep-sapphire text-body-sm uppercase;
+
+        + p {
+          @apply mt-3;
+        }
+      }
+
+      p {
+        @apply text-font-gray italic text-h4-sm lg:text-h4 before:content-quote after:content-quote;
+      }
+    }
+  }
+
+  // Supported inline components
+  >.wysiwyg-wrapper {
+    @apply my-6;
+  }
+
+  > .video {
+    @apply my-12
+  }
+
+  > .keep-reading {
+    @apply my-12;
+
+    ul {
+      @apply mt-2;
+
+      > li {
+        @apply relative my-1 pl-6;
+
+        &:before {
+          @apply content-blank absolute top-[13px] left-0 w-1.5 h-1.5 rounded-full bg-cerulean
+        }
+      }
+    }
+  }
+
+  > .cta-block {
+    @apply my-14 lg:my-12
+  }
+
+  > .blog-subscribe {
+    @apply my-14 lg:my-12
+  }
+
+  > .toptip {
+    @apply my-12
+  }
+
+  .superscript {
+    @apply align-super text-tiny;
+  }
+
+  .superscriptsymbol {
+    @apply align-super text-base;
+  }
+
+  .table {
+    @apply my-14 lg:my-12
+  }
+}

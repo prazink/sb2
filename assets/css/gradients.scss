@@ -1,0 +1,39 @@
+.gradient-secondary {
+  background: linear-gradient(90.28deg, #2c66bb 0.24%, #3a92cb 99.76%);
+}
+
+.gradient-secondary-radial {
+  background: radial-gradient(21.86% 31.62% at 61.3% 65.47%, rgba(19, 114, 167, 0.3) 0%, rgba(29, 145, 204, 0) 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(52.33% 90.47% at 26.87% 102.51%, rgba(224, 234, 239, 0.5208) 0%, rgba(32, 129, 203, 0) 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(60.62% 81.23% at 0.03% 0%, rgba(114, 195, 230, 0.9) 0%, rgba(118, 201, 238, 0) 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(90deg, #136abf -0.59%, #37bbea 99.41%);
+}
+
+.gradient-text {
+  background-image: linear-gradient(90.28deg, #2c66bb 0.24%, #3a92cb 99.76%);
+}
+.gradient-grey-top {
+  background: linear-gradient(180deg, #f2f6fa 0%, rgba(255, 255, 255, 0) 62.2%);
+  @apply print:bg-white;
+}
+
+.gradient-grey-bottom {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f2f6fa 62.2%);
+  @apply print:bg-white;
+}
+
+.gradient-mask-bottom {
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.gradient-border {
+  border-image: linear-gradient(90.28deg, #2c66bb 0.24%, #3a92cb 99.76%);
+}
+
+.gradient-green {
+  background: linear-gradient(93.86deg, #3DA385 0.99%, #0FBE8A 107.27%);
+  // border-radius: 8px;
+}
