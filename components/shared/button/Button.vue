@@ -22,8 +22,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, computed, watchEffect, useSlots } from 'vue'
-import { ButtonVariantEnum, ButtonSizeEnum, ButtonTagEnum } from '~/utils/types/enums/buttons.enum'
-import type { ButtonDefaultProps, ButtonEnabledStyleProps } from '~/utils/types/aliases/buttons.alias'
+import { ButtonVariantEnum, ButtonSizeEnum, ButtonTagEnum } from '../../../utils/types/enums/buttons.enum'
+import type { ButtonDefaultProps, ButtonEnabledStyleProps } from '../../../utils/types/aliases/buttons.alias'
 
 /* Emit handlers */
 const emit = defineEmits(['click'])
